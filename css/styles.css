@@ -1,0 +1,361 @@
+/* Reset basico */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+
+/* Contenedor mobile-first */
+
+.screen {
+    width: 100%;
+    max-width: 390px;
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.btn-new-note {
+    background: none;
+    border: none;
+    color: #007aff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-menu {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* Listado de notas */
+
+.note-list {
+    flex: 1;
+    padding: 0;
+}
+
+.empty-msg {
+    padding: 32px 16px;
+    color: #999;
+    text-align: center;
+}
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.note-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.note-item-date {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 2px;
+}
+
+.note-item-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+}
+
+.btn-delete-item {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+
+/* Contenido de nota */
+
+.note-name-title {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.note-content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background-color: #e8e8e8;
+}
+
+
+/* Toolbar de bloques */
+
+.block-toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 12px;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+}
+
+.btn-add-block {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-add-block:hover {
+    background: #e0e0e0;
+}
+
+
+/* Action sheets */
+
+.action-sheet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 12px 12px 0 0;
+    padding: 20px 16px;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.action-sheet h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.action-sheet p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.action-sheet button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #f0f0f0;
+    text-align: left;
+}
+
+.action-sheet-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    gap: 12px;
+}
+
+.action-sheet-footer button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+
+/* Botones especiales */
+
+button.primary {
+    background-color: #007aff;
+    color: white;
+}
+
+button.danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+
+/* Bloques en la nota */
+
+.block-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.block-item:hover {
+    background: #f5f5f5;
+}
+
+
+/* Heading niveles */
+
+.block-heading-1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.block-heading-2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.block-heading-3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* Paragraph highlight */
+
+.block-paragraph {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.block-paragraph.highlight {
+    background-color: #fffde7;
+}
+
+
+/* Image */
+
+.block-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+
+/* Editor de bloques */
+
+.block-wrapper {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.block-wrapper:hover>.block-inner>div {
+    outline: 2px solid #007aff;
+    border-radius: 8px;
+}
+
+
+/* Boton eliminar bloque */
+
+.btn-delete-block {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(231, 76, 60, 0.85);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.block-wrapper:hover .btn-delete-block {
+    opacity: 1;
+}
+
+
+/* Formularios del action sheet */
+
+#block-editor-content label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+#block-editor-content input[type="text"],
+#block-editor-content input[type="number"],
+#block-editor-content textarea,
+#block-editor-content select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+#block-editor-content input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 4px;
+}

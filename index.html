@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordi Nogueras - JS B2</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Pantalla 1: Listado de notas -->
+    <div id="screen-list" class="screen">
+        <header class="header">
+            <h1 class="header-title">Notas</h1>
+            <button class="btn-new-note">&#xff0b; Nueva nota</button>
+        </header>
+        <main class="note-list">
+            <!-- Las notas se generan aqui dinamicamente -->
+            <p class="empty-msg">No hay notas. Crea la primera.</p>
+        </main>
+    </div>
+
+    <!-- Pantalla 2: Crear / Editar nota -->
+    <div id="screen-detail" class="screen hidden">
+        <header class="header">
+            <span class="note-name-title" id="note-name-display">Nueva nota</span>
+            <button class="btn-menu">&#8942;</button>
+        </header>
+        <main class="note-content" id="note-blocks">
+            <!-- Los bloques se generan aqui dinamicamente -->
+        </main>
+        <footer class="block-toolbar">
+            <button class="btn-add-block" data-type="heading" title="Heading">Aa</button>
+            <button class="btn-add-block" data-type="paragraph" title="Paragraph">&#8801;</button>
+            <button class="btn-add-block" data-type="image" title="Image">&#9707;</button>
+        </footer>
+
+        <!-- Menu de opciones (3 puntos) -->
+        <div id="note-menu" class="action-sheet hidden">
+            <button id="btn-save-note">Guardar nota</button>
+            <button id="btn-discard-note">Descartar cambios</button>
+            <button id="btn-delete-note" class="danger hidden">Eliminar nota</button>
+        </div>
+
+        <!-- Action sheet edicion de bloque -->
+        <div id="block-editor" class="action-sheet hidden">
+            <div id="block-editor-content"></div>
+            <div class="action-sheet-footer">
+                <button id="btn-cancel-block">Cancel</button>
+                <button id="btn-save-block" class="primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla 3: Confirmacion borrado -->
+    <div id="screen-delete" class="screen hidden">
+        <header class="header">
+            <span class="note-name-title" id="delete-note-name">Nombre nota</span>
+            <button class="btn-menu">&#8942;</button>
+        </header>
+        <main class="note-content">
+            <!-- preview de la nota debajo -->
+        </main>
+        <div class="action-sheet">
+            <h3>Delete note</h3>
+            <p id="delete-confirm-msg">We are going to delete "<strong></strong>" note. To proceed confirm pressing the Delete Note button..</p>
+            <div class="action-sheet-footer">
+                <button id="btn-cancel-delete">Cancel</button>
+                <button id="btn-confirm-delete" class="danger">Delete Note</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
